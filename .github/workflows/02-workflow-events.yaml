@@ -1,10 +1,7 @@
 name: 02 - Workflow Events
 
 on: 
-  push:
   pull_request:
-  schedule:
-    - cron: '*/5 0 * * *' # Git hub suppots only 5 elements if we use 6 element we will get error.
   workflow_dispatch:
 
 
