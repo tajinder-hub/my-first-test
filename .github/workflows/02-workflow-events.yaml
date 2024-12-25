@@ -5,8 +5,8 @@ on:
   pull_request:
   schedule:
     - cron: '*/5 0 * * *' # Git hub suppots only 5 elements if we use 6 element we will get error.
-  workflow_despatch:
-    
+  workflow_dispatch:
+
 
 jobs:
     echo:
