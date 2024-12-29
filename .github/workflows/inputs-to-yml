@@ -1,0 +1,50 @@
+name: Synthetics Inputs To CSV
+
+on:
+  workflow_dispatch:
+    inputs:
+      Cluster_Details:
+        description: 'Cluster_Details :'
+        required: true
+      Stack_Details:
+        description: 'Stack_Details :'
+        required: true
+      Environment_Detail:
+        description: 'Environment_Detail :'
+        required: true
+      WFM_Rolling_Upgrade_Details:
+        description: 'WFM_Rolling_Upgrade_Details :'
+        required: true
+      Tenant_Vanity_URL:
+        description: 'Tenant_Vanity_URL_Details :'
+        required: true
+      DD_Variable:
+        description: 'DD_Variable_Details :'
+        required: true
+      Password:
+        description: 'Password_Details :'
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Updating received inputs to CSV file.
+      run: echo "Updating received inputs to CSV file:"
+
+    - name: Create and populate CSV file with inputs
+      run:
+        #CSV file header
+        #echo "Cluster_Details,Stack_Details,Environment_Detail,WFM_Rolling_Upgrade_Details,Tenant_Vanity_URL,DD_Variable,Password" > inputs.csv
+
+        #Appending inpts to CSV file
+        echo "${{ github.event.inputs.Cluster_Details }},${{ github.event.inputs.Stack_Details }},${{ github.event.inputs.Environment_Detail }},${{ github.event.inputs.WFM_Rolling_Upgrade_Details }},${{ github.event.inputs.Tenant_Vanity_URL }},${{ github.event.inputs.DD_Variable }},${{ github.event.inputs.Password }}" >> inputs.csv
+
+        cat inputs.csv
+  # - name: Commit updated CSV file
+  #   run: |
+  #     git add inputs.csv
+  #     COMMIT_MESSAGE="Updating CSV with Cluster: ${{ github.event.inputs.Cluster_Details }} and Tenant URL: ${{ github.event.inputs.Tenant_Vanity_URL }}"
+  #     git commit -m "$COMMIT_MESSAGE"
+  #     git push  
