@@ -1,0 +1,20 @@
+name: 04 using actions
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      # Block to set a default working-directory to avoid repeating it
+      run:
+        # Block to set a default working-directory to avoid repeating it
+        working-directory: test # Block to set a default working-directory to avoid repeating it
+    steps:
+    - name: check out code
+      uses: actions/checkout@v4
+    - name: Current working Directory
+      run: pwd
+    - name: listing test Directory
+      run: ls -ltra
+      #working-directory: test
