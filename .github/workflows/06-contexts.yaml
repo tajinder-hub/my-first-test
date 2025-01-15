@@ -21,7 +21,7 @@ jobs:
       - name: Retrieve Variable
         run: |
           # Assuming MY_VAR is an environment variable
-          echo "Variable value is: ${{ var.MY_VAR }}"
+          echo "Variable value is: ${{ MY_VAR }}"
           
         # If MY_VAR is defined in secrets, use the following instead:
         # echo "Secret value is: ${{ secrets.MY_VAR }}"
