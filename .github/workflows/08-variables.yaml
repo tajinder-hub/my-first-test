@@ -11,7 +11,7 @@ env:
 jobs:
   echo:
     runs-on: ubuntu-latest
-      env:
+    env:
       JOB_VAR: 'I am a jon env var'
       OVERWRITTEN: 'I have been overwritten at the job level'
 
