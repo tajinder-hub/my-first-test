@@ -25,7 +25,7 @@ jobs:
         run: echo "I was triggered from main"
 
       - name: Greeting
-        run: ech0 "Hello, World"
+        run: echo "Hello, World"
 
 
 
