@@ -38,7 +38,7 @@ jobs:
     steps:
        - name: Print Variables
          run: |
-          echo "Org var: ${{ var.ORG_VAR }}"
+          echo "Org var: ${{ vars.ORG_VAR }}"
           echo "Org overwritten var: ${{ vars.OVERWRITTEN_VAR }}"
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
   echo-prod:
@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: Print Production Variables
         run: |
-          echo "Org var: ${{ var.ORG_VAR }}"
+          echo "Org var: ${{ vars.ORG_VAR }}"
           echo "Org overwritten var: ${{ vars.OVERWRITTEN_VAR }}"
           echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
           echo "Environment var: ${{ vars.TARGET_VAR }}"
@@ -56,4 +56,4 @@ jobs:
     steps:
       - name: Print Undefined Variables
         run: |
-         echo "Org var: ${{ var.UNDEFINED_VAR || 'default value' }}"
+         echo "Org var: ${{ vars.UNDEFINED_VAR || 'default value' }}"
