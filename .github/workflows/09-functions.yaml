@@ -13,7 +13,6 @@ jobs:
       - name: I will be skipped
         if: ${{ success() }}
         run: echo "I will print if previous step succeed"
-
       - name: I will execute
         if: ${{ failure() }}
         run: echo "I will print if any previous step fails"
