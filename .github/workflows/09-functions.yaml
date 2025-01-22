@@ -17,8 +17,8 @@ jobs:
         if: ${{ failure() }}
         run: echo "I will print if any previous step fails"
       - name: i will execute
-        if: ${{ !canceled() }}
-        run: echo "I will always print, except when the workflow is canceled"
+        if: ${{ !cancelled() }}
+        run: echo "I will always print, except when the workflow is cancelled"
       - name: I will execute when canceled
-        if: ${{ canceled() }}
-        run: echo "I will print if the workflow has been canceled"
+        if: ${{ cancelled() }}
+        run: echo "I will print if the workflow has been cancelled"
