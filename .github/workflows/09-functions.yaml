@@ -16,7 +16,7 @@ jobs:
           ${{ toJSON(github.event.pull_request.labels) }}
       - name: Bug Step
         if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix') }}
-        echo "I am bug fix"
+        run: echo "I am bug fix"
       - name: Sleep for 20 seconds
         run: sleep 20
       - name: Failing Step
