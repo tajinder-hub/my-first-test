@@ -5,7 +5,7 @@ on:
     inputs:
       pass-unit-tests:
         type:   boolean
-        description: Whether uint tests will pass or not
+        description: Whether Unit tests will pass or not
         default: true
 
 jobs:
