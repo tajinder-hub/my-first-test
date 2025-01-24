@@ -19,7 +19,8 @@ on:
           - v3 
         default: v3
         description: Release from which to build and deploy
- jobs:
+
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
