@@ -28,6 +28,7 @@ jobs:
           echo "Output2=Value2" >> "$GITHUB_OUTPUT"
           echo "Output3=Value3" >> "$GITHUB_OUTPUT"
           cat "$GITHUB_OUTPUT"
+          echo "#########"
           echo "mistake=true" > "$GITHUB_OUTPUT"
           cat "$GITHUB_OUTPUT"
 
