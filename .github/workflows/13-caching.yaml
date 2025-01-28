@@ -1,0 +1,34 @@
+name: 13 - Using Cahning
+
+on:
+  workflow_dispatch:
+    inputs:
+      use-cache:
+        description: Whether to execute chache step
+        type: boolean
+        default: true
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 13-caching/react-app
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Setup Node 
+        uses: actions/setup-node@v3
+        with:
+          node-varsion: '20.x'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Testing
+        run: npm run testing
+        
+      - name: Bulding
+        run: npm run biuld
+      - name: Deploying to nonproduction
+        run: echo "Deploying to nonproduction"
+
+
