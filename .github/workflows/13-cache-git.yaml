@@ -2,7 +2,7 @@
 # about how to use caching in workflows, best practices,
 # and limitations of caching in GitHub Actions.
 
-name: 13 - Using Caching
+name: 13 - Using Caching GIT
 
 on:
   workflow_dispatch:
