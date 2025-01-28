@@ -35,7 +35,7 @@ jobs:
         run: npm run testing
         
       - name: Bulding
-        run: npm run biuld
+        run: npm run build
       - name: Deploying to nonproduction
         run: echo "Deploying to nonproduction"
 
