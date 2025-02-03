@@ -6,7 +6,6 @@ on:
 jobs:
   backward-compatiablity:
     name: ${{ matrix.os }}-${{ matrix.node-version }}
-
     runs-on: ${{ matrix.os }}
     strategy:
       martix:
