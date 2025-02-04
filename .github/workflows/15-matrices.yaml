@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        clour: [red, green]
+        color: [red, green]
         shape: [ circle, square]
         size: [small, large]
         include:
