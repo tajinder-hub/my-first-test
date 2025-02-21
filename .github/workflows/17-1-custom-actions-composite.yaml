@@ -1,0 +1,11 @@
+name:  17 - 1 - Custom Actions - Composite 
+ 
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node and NPM Dependencies
+        uses: ./.github/workflows/action/composite-cache-deps
