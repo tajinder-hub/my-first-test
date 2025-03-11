@@ -35,8 +35,8 @@ def run():
         
         # Fetch and validate max trials value, with an additional check for empty string
         max_trials_str = os.getenv("INPUT_MAX_TRIALS", '3')  # Default max trials is '3' if not provided
-        if max_trials_str == '':
-            max_trials_str = '3'  # Fallback to default value if it's an empty string
+        if max_trials_str == '' or '$' in max_trials_str:  # Detect template placeholders like $ {{ ... }}
+            raise ValueError(f"Invalid max_trials value: {max_trials_str}. It seems to contain a placeholder.")
         
         try:
             max_trials = int(max_trials_str)
