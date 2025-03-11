@@ -7,6 +7,14 @@ on:
       url:
         type: string
         default: 'https://www.google.com'
+        max_trials:
+          description: Maximum number of trials action fails.
+          default: '10'
+          required false
+        delay:
+          description: Delay in seconds between trials.
+          default: '5'
+          required: false
 
 jobs:
   ping-url:
