@@ -22,9 +22,21 @@ def ping_url(url, delay, max_trials):
 def run():
     try:
         website_url = os.getenv("INPUT_URL")
-        delay = int(os.getenv("INPUT_DELAY", 5))  # Default delay is 5 seconds if not provided
-        max_trials = int(os.getenv("INPUT_MAX_TRIALS", 3))  # Default max trials is 3 if not provided
-
+        
+        # Fetch and validate delay value
+        delay_str = os.getenv("INPUT_DELAY", '5')  # Default delay is '5' if not provided
+        try:
+            delay = int(delay_str)
+        except ValueError:
+            raise ValueError(f"Invalid delay value: {delay_str}. It should be a valid integer.")
+        
+        # Fetch and validate max trials value
+        max_trials_str = os.getenv("INPUT_MAX_TRIALS", '3')  # Default max trials is '3' if not provided
+        try:
+            max_trials = int(max_trials_str)
+        except ValueError:
+            raise ValueError(f"Invalid max_trials value: {max_trials_str}. It should be a valid integer.")
+        
         if not website_url:
             raise ValueError("Website URL (INPUT_URL) is not provided in the environment variables.")
 
