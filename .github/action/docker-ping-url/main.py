@@ -23,15 +23,21 @@ def run():
     try:
         website_url = os.getenv("INPUT_URL")
         
-        # Fetch and validate delay value
+        # Fetch and validate delay value, with an additional check for empty string
         delay_str = os.getenv("INPUT_DELAY", '5')  # Default delay is '5' if not provided
+        if delay_str == '':
+            delay_str = '5'  # Fallback to default value if it's an empty string
+        
         try:
             delay = int(delay_str)
         except ValueError:
             raise ValueError(f"Invalid delay value: {delay_str}. It should be a valid integer.")
         
-        # Fetch and validate max trials value
+        # Fetch and validate max trials value, with an additional check for empty string
         max_trials_str = os.getenv("INPUT_MAX_TRIALS", '3')  # Default max trials is '3' if not provided
+        if max_trials_str == '':
+            max_trials_str = '3'  # Fallback to default value if it's an empty string
+        
         try:
             max_trials = int(max_trials_str)
         except ValueError:
