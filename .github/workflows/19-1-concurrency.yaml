@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Ping URL
-        id: ping URL
+        id: ping-URL
         uses: ./.github/action/docker-ping-url
         with:
           url: https://www.invalidurlsdsdsdfdf.com
-          max_trials: 5
+          max_trials: 20
           delay: 2
