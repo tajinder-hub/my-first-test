@@ -14,6 +14,6 @@ jobs:
         id: ping URL
         uses: ./.github/action/docker-ping-url
         with:
-          url: https://www.invalidurl_sdsdsdfdf.com
+          url: https://www.invalidurlsdsdsdfdf.com
           max_trials: 5
           delay: 2
